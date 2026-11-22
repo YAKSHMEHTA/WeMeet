@@ -1,12 +1,12 @@
 import axios, { HttpStatusCode } from "axios";
 import { createContext, useState } from "react";
-
+import {url} from '../prod.js'
 import { useNavigate } from "react-router-dom";
-
 export const AuthContext = createContext({});
 
+console.log('process.env.isProd:',import.meta.env.VITE_IS_PROD);
 const client = axios.create({
-  baseURL: "http://localhost:8000/api/v1",
+  baseURL:  import.meta.env.VITE_IS_PROD == 'true' ? `${url}+"/api/v1` : "http://localhost:8000/api/v1",
 });
 
 export const AuthProvider = ({ children }) => {
