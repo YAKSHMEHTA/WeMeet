@@ -2,11 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import { connect, io } from "socket.io-client";
 import "../Pages/Landing.css";
 import { Route, useNavigate } from "react-router-dom";
+import { url } from "../prod";
 
 var connections = {};
 
 function VideoPage() {
-	const serverUrl = "localhost:8000";
+	const serverUrl = import.meta.env.VITE_IS_PROD == 'false' ?"localhost:8000" : url;
 	const peerConfigConnections = {
 		iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
 	};

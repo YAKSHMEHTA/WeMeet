@@ -68,14 +68,15 @@ export default function Auth() {
 
     if (mode === "signup") {
       try {
-        let {msg} = await handleRegister(form.name, form.username, form.password);
-        console.log(msg);
+        console.log('ff:',form.name, form.username, form.password);
+        let msg = await handleRegister(form.name, form.username, form.password);
+        console.log("msg",msg);
       } catch (e) {
         console.log(e);
       }
     } else if (mode === "login") {
       try {
-        let {msg} = await handleLogin(form.username, form.password);
+        let msg = await handleLogin(form.username, form.password);
         console.log(msg);
       } catch (e) {
         console.log(e);
