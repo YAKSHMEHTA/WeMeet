@@ -11,7 +11,7 @@ const server = createServer(app);
 const io = connectToSocket(server);
 
 app.use(cors({
-  origin:"http://localhost:5173",
+  origin:["http://localhost:5173","https://we-meet-tau.vercel.app/"],
   credentials:true
 }));
 
