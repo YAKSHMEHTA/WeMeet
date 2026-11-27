@@ -11,6 +11,7 @@ const client = axios.create({
 
 export const AuthProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
+  const [tempName,setTempName] = useState(null);
 
   const router = useNavigate();
 
@@ -45,6 +46,8 @@ export const AuthProvider = ({ children }) => {
     setUserData,
     handleLogin,
     handleRegister,
+    tempName,
+    setTempName
   };
 
   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import "../App.css";
-import { AuthContext } from "../Contexts/AuthContext";
+import { AuthContext } from "../Contexts/AuthContext"; // setUserData
 
 const EyeIcon = ({ open }) => (
   <svg
